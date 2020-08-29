@@ -20,6 +20,10 @@
   "plugins": ["prettier", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": "error",
+    "@typescript-eslint/interface-name-prefix": [
+      "error",
+      { "prefixWithI": "always" }
+    ],
     "class-methods-use-this": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/no-unused-vars": [
