@@ -3,10 +3,10 @@ import { verify } from 'jsonwebtoken';
 import authConfig from '@config/auth';
 import AppError from '@shared/errors/AppError';
 
-interface TokenPayload {
+interface ITokenPayload {
   iat: number;
   exp: number;
-  sub: string;
+  subject: string;
 }
 
 export default function ensureAuthenticated(
@@ -25,10 +25,10 @@ export default function ensureAuthenticated(
   try {
     const decoded = verify(token, authConfig.jwt.secret);
 
-    const { sub } = decoded as TokenPayload;
+    const { subject } = decoded as ITokenPayload;
 
     request.user = {
-      id: sub,
+      id: subject,
     };
 
     return next();

@@ -18,6 +18,7 @@ interface IResponse {
   token: string;
 }
 
+@injectable()
 class AuthUserService {
   constructor(
     @inject('UsersRepository')
@@ -27,7 +28,7 @@ class AuthUserService {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      console.log('Error');
+      console.log('Error Authentication');
       throw new AppError('Incorrect Email/Password combination .', 401);
     }
 
