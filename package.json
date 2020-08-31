@@ -7,7 +7,8 @@
     "build": "tsc",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "start": "ts-node  src/shared/infra/http/server.ts",
-    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "test": "jest"
   },
   "dependencies": {
     "@types/cors": "^2.8.7",
@@ -36,7 +37,9 @@
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.4.2",
     "prettier": "^2.0.5",
+    "ts-jest": "^26.3.0",
     "ts-node-dev": "^1.0.0-pre.58",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.9.7"
